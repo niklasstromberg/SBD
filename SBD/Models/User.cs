@@ -19,16 +19,19 @@ namespace SBD.Models
         [Column("Efternamn")]
         public string lastName { get; set; }
         public Int64 pnr { get; set; }
-        public Int64 telefon { get; set; }
-        public Int64 mobil { get; set; }
+        public Int64 phone { get; set; }
+        public Int64 mobile { get; set; }
         [EmailAddress]
         public string email { get; set; }
+        // foreign keys
         [Required]
-        [ForeignKey("Adress")]
-        public int AdressLeverans { get; set; }
+        public int deliveryAdress { get; set; }
+        [ForeignKey("deliveryadress")]  
+        public Adress AdressDel { get; set; }
         [Required]
-        [ForeignKey("Adress")]
-        public int AdressFakturering { get; set; }
+        public int billingAdress { get; set; }
+        [ForeignKey("billingAdress")]
+        public Adress AdressBil { get; set; }
 
     }
 }
