@@ -9,7 +9,7 @@ namespace SBD.Models
 {
     public class User
     {
-        [Key]
+        [Key, ForeignKey("Item")]
         public int id { get; set; }
         public string company { get; set; }
         [Required]

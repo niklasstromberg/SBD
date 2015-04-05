@@ -9,7 +9,7 @@ namespace SBD.Models
 {
     public class Item
     {
-        [Key]
+        [Key, ForeignKey("Cart")]
         public int id { get; set; }
         public int price { get; set; }
         public int stock { get; set; }
